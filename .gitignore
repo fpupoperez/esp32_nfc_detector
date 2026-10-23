@@ -1,0 +1,40 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# MicroPython compiled bytecode
+*.mpy
+
+# Device configuration & credentials (contains Wi-Fi SSID/passwords, MQTT auth, Webhook tokens)
+config.json
+secrets.py
+credentials.json
+.env
+.env.*
+!.env.example
+
+# MicroPython tools configuration (e.g. ampy)
+.ampy
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Editor & IDE artifacts
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Operating System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
