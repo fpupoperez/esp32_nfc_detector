@@ -11,6 +11,7 @@ from st25r3916 import ST25R3916
 # M5Stack Unit NFC (ST25R3916) in I2C mode at address 0x50. Connects via
 # standard Grove cable (Yellow=SCL, White=SDA, Red=3.3V/5V, Black=GND).
 # For ESP32-S3 boards use the matching preconfigured variant instead:
+#   main_atoms3_lite.py          (SCL=1, SDA=2, Neopixel on GPIO35, Button on GPIO41)
 #   main_esp32_s3_super_mini.py  (SCL=2, SDA=1, Neopixel on GPIO48)
 #   main_esp32_s3_zero.py        (SCL=2, SDA=1, Neopixel on GPIO21)
 RESET_PORTAL_PIN = 4  # Connect a button between this GPIO and GND to force portal reset

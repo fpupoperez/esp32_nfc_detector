@@ -40,11 +40,12 @@ The firmware ships in three directories under `src/`, with preconfigured board v
 
 ### M5Stack Unit NFC (ST25R3916 I2C) - `src/m5stack/`
 
-| File | Board | SCL / SDA | Status LED default |
-|------|-------|-----------|--------------------|
-| `main.py` | Standard/classic ESP32 DevKit (WROOM etc.) | 22 / 21 | Plain LED on GPIO 2 |
-| `main_esp32_s3_super_mini.py` | ESP32-S3 Super-Mini | 2 / 1 | Onboard Neopixel on GPIO 48 |
-| `main_esp32_s3_zero.py` | ESP32-S3 Zero (Waveshare) | 2 / 1 | Onboard Neopixel on GPIO 21 |
+| File | Board | SCL / SDA | Status LED default | Reset Button |
+|------|-------|-----------|--------------------|--------------|
+| `main.py` | Standard/classic ESP32 DevKit (WROOM etc.) | 22 / 21 | Plain LED on GPIO 2 | GPIO 4 |
+| `main_atoms3_lite.py` | M5Stack AtomS3 Lite | 1 / 2 | Onboard Neopixel on GPIO 35 | GPIO 41 (onboard) |
+| `main_esp32_s3_super_mini.py` | ESP32-S3 Super-Mini | 2 / 1 | Onboard Neopixel on GPIO 48 | GPIO 4 |
+| `main_esp32_s3_zero.py` | ESP32-S3 Zero (Waveshare) | 2 / 1 | Onboard Neopixel on GPIO 21 | GPIO 4 |
 
 Within each combination the variants are identical except for the hardware pin block and the default `NEOPIXEL_PIN` in the config portal. Every variant shares the same firmware: portal, events, LED patterns, MQTT and webhooks behave identically no matter which reader or bus you use - only the hardware block, the driver import and the reader construction differ.
 
@@ -165,6 +166,15 @@ Standard ESP32 DevKit (`m5stack/main.py`):
 | Yellow | SCL | 22 |
 | White | SDA | 21 |
 | Red | VCC | 3.3 V |
+| Black | GND | GND |
+
+M5Stack AtomS3 Lite (`m5stack/main_atoms3_lite.py` - direct plug-and-play via onboard HY2.0-4P Grove Port A):
+
+| Grove Wire | ST25R3916 Pin | AtomS3 Lite GPIO |
+|------------|---------------|------------------|
+| White | SCL | 1 (G1) |
+| Yellow | SDA | 2 (G2) |
+| Red | VCC | 5 V |
 | Black | GND | GND |
 
 ESP32-S3 Super-Mini and Zero (`m5stack/main_esp32_s3_*.py`):
